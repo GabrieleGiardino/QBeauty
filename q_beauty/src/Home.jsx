@@ -5,6 +5,14 @@ import { FaInstagram } from 'react-icons/fa';
 import './App.css';
 import ContactForm from './components/ContactForm';
 
+// Import immagini da src/assets
+import founderImage from './assets/founder3.jpg';
+import sprayImage from './assets/spray1.jpg';
+import burroImage from './assets/burro_emoliente.jpg';
+import cremaImage from './assets/crema_piedi.jpg';
+import setImage from './assets/beauty_set.png';
+import qbeautyImage from './assets/qbeauty.jpg'; // <-- aggiunta
+
 function HomePage() {
   const [loaded, setLoaded] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -25,7 +33,7 @@ function HomePage() {
             onClick={() => setModalOpen(true)}
           >
             <img
-              src="/founder3.jpg"
+              src={founderImage}
               alt="La fondatrice"
               className="founder-photo"
             />
@@ -36,7 +44,7 @@ function HomePage() {
         {modalOpen && (
           <div className="modal-overlay" onClick={() => setModalOpen(false)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <img src="/founder3.jpg" alt="La fondatrice" className="modal-background" />
+              <img src={qbeautyImage} alt="QBeauty sfondo" className="modal-background" /> {/* <-- modificata */}
               <div className="modal-text">
                 <h3>Chi sono</h3>
                 <p>
@@ -64,13 +72,13 @@ function HomePage() {
           <h2>Prodotti</h2>
           <div className="products">
             <Link to="/prodotti/Spray">
-              <img src="/spray1.jpg" alt="Spray Igienizzante" />
+              <img src={sprayImage} alt="Spray Igienizzante" />
             </Link>
             <Link to="/prodotti/Olio">
-              <img src="/burro_emoliente.jpg" alt="Burro Emolliente" />
+              <img src={burroImage} alt="Burro Emolliente" />
             </Link>
             <Link to="/prodotti/Siero">
-              <img src="/crema_piedi.jpg" alt="Crema Piedi" />
+              <img src={cremaImage} alt="Crema Piedi" />
             </Link>
           </div>
         </section>
@@ -80,7 +88,7 @@ function HomePage() {
           <h2>Set</h2>
           <p>Scopri il nostro set esclusivo per un trattamento completo Q•BEAUTY.</p>
           <Link to="/set">
-            <img src="/beauty_set.png" alt="Set QBeauty" className="set-image" />
+            <img src={setImage} alt="Set QBeauty" className="set-image" />
           </Link>
         </section>
 

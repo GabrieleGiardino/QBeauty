@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import './Set';
 
+// import immagine da src/assets
+import lastImage from './assets/last.jpg';
+
 function App() {
   return (
     <div className="home">
@@ -11,7 +14,7 @@ function App() {
         <header className="hero" role="banner">
           <div className="hero-container">
             <img
-              src="/last.jpg"
+              src={lastImage}
               alt="Q.BEAUTY"
               className="hero-img"
             />

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
-import cremaImage from '../../public/crema_piedi.jpg'; 
+import cremaImage from '../assets/crema_piedi.jpg';
+import cremaUsoImage from '../assets/IMG_5511.JPG';
 
 function Siero() {
   return (
@@ -10,7 +11,11 @@ function Siero() {
       <div className="product-card">
         <div className="product-image">
           <img src={cremaImage} alt="Crema Piedi Idratante" />
-          <img src="/IMG_5511.JPG" alt="Applicazione crema piedi" style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }} />
+          <img
+            src={cremaUsoImage}
+            alt="Applicazione crema piedi"
+            style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }}
+          />
         </div>
 
         <div className="product-details">

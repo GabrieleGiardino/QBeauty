@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css'; // Stili globali
+import beautySetImage from './assets/beauty_set.png'; // Import corretto immagine
 
 function SetPage() {
   return (
@@ -10,7 +11,7 @@ function SetPage() {
 
       <div className="product-card">
         <div className="product-image">
-          <img src="/beauty_set.png" alt="Set completo" />
+          <img src={beautySetImage} alt="Set completo" />
         </div>
 
         <div className="product-details">
@@ -23,7 +24,7 @@ function SetPage() {
             <li>Crema Piedi Idratante</li>
           </ul>
           <p>
-          Offri alla tua clientela un servizio pedicure completo firmato Q•BEAUTY
+            Offri alla tua clientela un servizio pedicure completo firmato Q•BEAUTY
           </p>
           <div style={{ marginTop: '2rem', fontSize: '1.3rem', lineHeight: '1.6' }}>
             <p>

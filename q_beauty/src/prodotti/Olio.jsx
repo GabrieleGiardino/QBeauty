@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css"; 
-import burroImage from "../../public/burro_emoliente.jpg"; 
+import burroImage from "../assets/burro_emoliente.jpg"
+import prodottoImage from "../assets/IMG_5514.JPG";
 
 function ProdottoOlio() {
   return (
@@ -10,7 +11,7 @@ function ProdottoOlio() {
       <div className="product-card">
         <div className="product-image">
           <img src={burroImage} alt="Burro Emolliente" />
-          <img src="/IMG_5514.JPG" alt="Burro Emolliente Q.BEAUTY" style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }} />
+          <img src={prodottoImage} alt="Burro Emolliente Q.BEAUTY" style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }} />
         </div>
 
         <div className="product-details">

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
-import sprayImage from '../../public/spray1.jpg'; 
+import sprayImage from '../assets/spray1.jpg';
+import sprayUsoImage from '../assets/IMG_5505.JPG';
 
 function Spray() {
   return (
@@ -10,7 +11,11 @@ function Spray() {
       <div className="product-card">
         <div className="product-image">
           <img src={sprayImage} alt="Spray Igienizzante" />
-          <img src="/IMG_5505.JPG" alt="Uso dello spray sui piedi" style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }} />
+          <img
+            src={sprayUsoImage}
+            alt="Uso dello spray sui piedi"
+            style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }}
+          />
         </div>
 
         <div className="product-details">

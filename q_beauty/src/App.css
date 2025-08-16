@@ -3,10 +3,11 @@
 ====================================================== */
 @font-face {
   font-family: "Korolev Compressed W04 Light";
-  src: url("/fonts/KorolevCompressedW04Light.ttf") format("truetype");
+  src: url("./assets/Korolev-Compressed-W04-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+
 
 :root {
   --gold: #d4af37;
@@ -54,7 +55,7 @@ img {
 /* Sfondo generale */
 .home {
   min-height: 100vh;
-  background: url("/black2.png") center / cover fixed no-repeat;
+  background: url("./assets/black2.png") center / cover fixed no-repeat;
 }
 
 /* ======================================================
@@ -286,7 +287,7 @@ section { padding: 40px 20px; }
    PAGINA PRODOTTO
 ====================================================== */
 .product-page {
-  background: url("/black2.png") center / cover fixed no-repeat;
+  background: url("./assets/black2.png") center / cover fixed no-repeat;
   color: var(--text);
   padding: 4rem 2rem;
   min-height: 100vh;
