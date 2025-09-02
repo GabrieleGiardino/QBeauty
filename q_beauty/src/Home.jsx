@@ -119,12 +119,12 @@ function HomePage() {
           <p>
             © {new Date().getFullYear()} Tutti i diritti riservati – Realizzato da{' '}
             <a
-              href="https://www.instagram.com/gabrielegiardino_/"
+              href="https://l.instagram.com/?u=https%3A%2F%2Fsorted-beryl.vercel.app%2F%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAafvJCmZ93ceurP9ojsovb6QpZloBHvTSD5ODqbC7oHkLE79xXvBGO77NduZXQ_aem_k-h5FW0GGtnn8vUWNU9LKQ&e=AT2mdF7-ZbPDFMsbspAMfJlWPHcMa1GG5gROLJ26NDTCJzdpSkZNKpALXjLpmPzCew3k_x0Bhe1sbm_wbcU9IIvLvtYB9BzUP-rGcY4"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#ffcc00', fontWeight: 'bold', textDecoration: 'underline' }}
             >
-              Gabriele Giardino
+              Sorted
             </a>
           </p>
         </footer>
