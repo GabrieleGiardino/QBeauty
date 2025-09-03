@@ -11,7 +11,7 @@ import sprayImage from './assets/spray1.jpg';
 import burroImage from './assets/burro_emoliente.jpg';
 import cremaImage from './assets/crema_piedi.jpg';
 import setImage from './assets/beauty_set.png';
-import qbeautyImage from './assets/qbeauty.jpg'; // <-- aggiunta
+// ❌ rimosso: import qbeautyImage from './assets/qbeauty.jpg';
 
 function HomePage() {
   const [loaded, setLoaded] = useState(false);
@@ -44,13 +44,14 @@ function HomePage() {
         {modalOpen && (
           <div className="modal-overlay" onClick={() => setModalOpen(false)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <img src={qbeautyImage} alt="QBeauty sfondo" className="modal-background" /> {/* <-- modificata */}
+              {/* ✅ usa l'immagine dal public */}
+              <img src="/qbeauty.jpg" alt="QBeauty sfondo" className="modal-background" />
               <div className="modal-text">
                 <h3>Chi sono</h3>
                 <p>
                   Sono{' '}
                   <a
-                    href="https://www.instagram.com/queenhelene_nails/" 
+                    href="https://www.instagram.com/queenhelene_nails/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: '#ffcc00', fontWeight: 'bold', textDecoration: 'underline' }}

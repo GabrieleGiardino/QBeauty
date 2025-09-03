@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import cremaImage from '../assets/crema_piedi.jpg';
-import cremaUsoImage from '../assets/img_5511.JPG';
+import cremaUsoImage from '../assets/img_5511.jpg';
 
 function Siero() {
   return (
