@@ -11,6 +11,8 @@ import Olio from './prodotti/Olio';
 import Spray from './prodotti/Spray';
 import SetPage from './Set'; // ✅ Aggiunto per la pagina del Set
 import ScrollToTop from './components/ScrollToTop'; // ⬅️ nuovo
+import CookieBanner from './components/CookieBanner';
+import PrivacyPolicy from './PrivacyPolicy';
 
 import './index.css';
 import './i18n';
@@ -20,6 +22,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ScrollToTop /> {/* ⬅️ qui si attiva lo scroll all’inizio */}
+      <CookieBanner />
       <Routes>
         <Route path="/" element={<App />} /> {/* Hero iniziale */}
         <Route path="/home" element={<HomePage />} /> {/* Pagina con contenuti */}
@@ -28,6 +31,7 @@ root.render(
         <Route path="/prodotti/Spray" element={<Spray />} />
         <Route path="/articoli" element={<Articolo1 />} />
         <Route path="/set" element={<SetPage />} /> {/* ✅ Nuova pagina Set */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
