@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import sprayImage from '../assets/spray1.jpg';
-import sprayUsoImage from '../assets/IMG_5505.JPG';
+import sprayUsoImage from '../assets/img_5505.JPG';
 
 function Spray() {
   return (

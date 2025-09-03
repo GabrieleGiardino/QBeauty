@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css"; 
 import burroImage from "../assets/burro_emoliente.jpg"
-import prodottoImage from "../assets/IMG_5514.JPG";
+import prodottoImage from "../assets/img_5514.JPG";
 
 function ProdottoOlio() {
   return (
