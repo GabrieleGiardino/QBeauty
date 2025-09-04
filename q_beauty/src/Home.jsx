@@ -123,7 +123,7 @@ function HomePage() {
               href="https://sorted-beryl.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#ffcc00', fontWeight: 'bold', textDecoration: 'underline' }}
+              style={{ color: '#ffcc00', fontWeight: 'bold', textDecoration: 'bold' }}
             >
               Sorted
             </a>
