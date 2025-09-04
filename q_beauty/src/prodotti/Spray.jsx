@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../App.css';
-import sprayImage from '../assets/spray1.jpg';
-import sprayUsoImage from '/img_5505.jpg';
 
 function Spray() {
   return (
@@ -11,9 +8,10 @@ function Spray() {
 
       <div className="product-card">
         <div className="product-image">
-          <img src={sprayImage} alt="Spray Igienizzante" />
+          {/* immagini dal public */}
+          <img src="/img/spray1.jpg" alt="Spray Igienizzante" />
           <img
-            src={sprayUsoImage}
+            src="/img/img_5505.jpg"
             alt="Uso dello spray sui piedi"
             style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }}
           />
@@ -21,8 +19,7 @@ function Spray() {
 
         <div className="product-details">
           <p>
-            Il primo prodotto della linea <strong>Q.BEAUTY</strong> è lo spray igienizzante.
-            È un prodotto multiuso in grado di disinfettare, levigare, eliminare all’istante qualsiasi odore e rinfrescare la pelle.
+            Il primo prodotto della linea <strong>Q.BEAUTY</strong> è lo spray igienizzante…
           </p>
 
           <ul>
@@ -34,16 +31,16 @@ function Spray() {
           </ul>
 
           <p>
-            <strong>Modalità d’uso:</strong> 2 spruzzi sulle dita e 2 su metatarso e tallone sono sufficienti per trarre il massimo beneficio. Massaggiare velocemente e procedere con il trattamento.
+            <strong>Modalità d’uso:</strong> 2 spruzzi sulle dita e 2 su metatarso e tallone… 
           </p>
 
           <ul>
-            <li> Utilizzabile su piedi e mani</li>
-            <li> Formato da 100ml</li>
-            <li> Prodotto Made in Italy 🇮🇹</li>
-            <li> Cruelty Free 🐰 </li>
-            <li> Vegan 🍃 </li>
-            <li> 76% di ingredienti di origine naturale 🌿</li>
+            <li>Utilizzabile su piedi e mani</li>
+            <li>Formato da 100ml</li>
+            <li>Prodotto Made in Italy 🇮🇹</li>
+            <li>Cruelty Free 🐰</li>
+            <li>Vegan 🍃</li>
+            <li>76% di ingredienti di origine naturale 🌿</li>
           </ul>
 
           <div style={{ marginTop: '2rem', fontSize: '1.3rem', lineHeight: '1.6' }}>
@@ -54,9 +51,9 @@ function Spray() {
         </div>
       </div>
 
-      <Link to="/Home" className="cta-button" style={{ display: 'inline-block', marginTop: '2rem' }}>
+      <a href="/home" className="cta-button" style={{ display: 'inline-block', marginTop: '2rem' }}>
         ← Torna alla Home
-      </Link>
+      </a>
     </main>
   );
 }

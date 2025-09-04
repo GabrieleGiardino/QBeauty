@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../App.css';
-import cremaImage from '../assets/crema_piedi.jpg';
-import cremaUsoImage from '../assets/img_5511.jpg';
 
 function Siero() {
   return (
@@ -11,9 +8,10 @@ function Siero() {
 
       <div className="product-card">
         <div className="product-image">
-          <img src={cremaImage} alt="Crema Piedi Idratante" />
+          {/* immagini dal public */}
+          <img src="/img/crema_piedi.jpg" alt="Crema Piedi Idratante" />
           <img
-            src={cremaUsoImage}
+            src="/img/img_5511.jpg"
             alt="Applicazione crema piedi"
             style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }}
           />
@@ -43,13 +41,14 @@ function Siero() {
           </p>
 
           <ul>
-            <li> L’applicazione della crema è consigliata sui piedi</li>
-            <li> Formato da 100ml</li>
-            <li> Prodotto Made in Italy 🇮🇹</li>
-            <li> Cruelty Free 🐰 </li>
-            <li> Vegan 🍃 </li>
-            <li> +90% di ingredienti di origine naturale 🌿</li>
+            <li>L’applicazione della crema è consigliata sui piedi</li>
+            <li>Formato da 100ml</li>
+            <li>Prodotto Made in Italy 🇮🇹</li>
+            <li>Cruelty Free 🐰</li>
+            <li>Vegan 🍃</li>
+            <li>+90% di ingredienti di origine naturale 🌿</li>
           </ul>
+
           <div style={{ marginTop: '2rem', fontSize: '1.3rem', lineHeight: '1.6' }}>
             <p><strong>💰 Prezzo:</strong> € 24,90</p>
             <p>🔹 <strong>-10%</strong> sul primo acquisto → <strong>€ 22,40</strong></p>
@@ -58,9 +57,9 @@ function Siero() {
         </div>
       </div>
 
-      <Link to="/Home" className="cta-button" style={{ display: "inline-block", marginTop: "2rem" }}>
+      <a href="/home" className="cta-button" style={{ display: "inline-block", marginTop: "2rem" }}>
         ← Torna alla Home
-      </Link>
+      </a>
     </main>
   );
 }
