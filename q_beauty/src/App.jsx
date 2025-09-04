@@ -19,7 +19,7 @@ function App() {
               className="hero-img"
             />
             <div className="cta-overlay">
-              <Link to="./Home" className="cta-button">
+              <Link to="/home" className="cta-button">
                 Scopri i nostri prodotti →
               </Link>
             </div>

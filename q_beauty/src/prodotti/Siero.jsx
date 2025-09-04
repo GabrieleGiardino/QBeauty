@@ -1,4 +1,6 @@
+// src/prodotti/Siero.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 function Siero() {
@@ -57,9 +59,9 @@ function Siero() {
         </div>
       </div>
 
-      <a href="/Home" className="cta-button" style={{ display: "inline-block", marginTop: "2rem" }}>
+      <Link to="/home" className="cta-button" style={{ display: 'inline-block', marginTop: '2rem' }}>
         ← Torna alla Home
-      </a>
+      </Link>
     </main>
   );
 }

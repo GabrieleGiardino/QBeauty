@@ -1,4 +1,6 @@
+// src/prodotti/Spray.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 function Spray() {
@@ -51,9 +53,9 @@ function Spray() {
         </div>
       </div>
 
-      <a href="/Home" className="cta-button" style={{ display: 'inline-block', marginTop: '2rem' }}>
+      <Link to="/home" className="cta-button" style={{ display: 'inline-block', marginTop: '2rem' }}>
         ← Torna alla Home
-      </a>
+      </Link>
     </main>
   );
 }
