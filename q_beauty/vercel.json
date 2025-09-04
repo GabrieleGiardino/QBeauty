@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd q_beauty && npm ci && npm run build",
-  "outputDirectory": "q_beauty/dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
