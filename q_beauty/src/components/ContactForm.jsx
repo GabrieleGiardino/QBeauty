@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./ContactForm.css";
 
-// piccola utility per leggere i cookie senza dipendenze
+// utility semplice per leggere un cookie
 function getCookie(name) {
   const cname = name + "=";
   const parts = document.cookie.split(";");
@@ -15,11 +15,21 @@ function getCookie(name) {
 
 const ContactForm = () => {
   const form = useRef();
+
+  // campi controllati (ci servono per valorizzare from_name / reply_to)
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const [accepted, setAccepted] = useState(false);
   const [sending, setSending] = useState(false);
 
   const sendEmail = async (e) => {
     e.preventDefault();
+
+    // anti-bot honeypot: se "company" è compilato, esci silenziosamente
+    const botTrap = form.current?.elements?.company?.value;
+    if (botTrap) return;
 
     // blocca se non hanno accettato la privacy
     if (!accepted) return;
@@ -31,20 +41,34 @@ const ContactForm = () => {
       return;
     }
 
+    // piccoli check sulle env (utile in dev)
+    if (!import.meta.env.VITE_EMAILJS_PUBLIC_KEY ||
+        !import.meta.env.VITE_EMAILJS_SERVICE_ID ||
+        !import.meta.env.VITE_EMAILJS_TEMPLATE_ID) {
+      console.warn("Config EmailJS mancante: controlla VITE_EMAILJS_* in .env.local");
+    }
+
     try {
       setSending(true);
+
+      // Nota: sendForm prende automaticamente **tutti i campi del form** (anche gli hidden)
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY } // v4 API
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY } // v4
       );
+
       alert("Messaggio inviato con successo!");
       form.current.reset();
+      setUserName("");
+      setUserEmail("");
+      setMessage("");
       setAccepted(false);
     } catch (err) {
-      console.error(err);
-      alert("Errore nell’invio. Riprova.");
+      console.error("EmailJS error:", err);
+      // molti errori utili sono in err.text
+      alert(`Errore nell'invio: ${err?.text || err?.message || "verifica chiavi e campi del template"}`);
     } finally {
       setSending(false);
     }
@@ -58,12 +82,43 @@ const ContactForm = () => {
       </p>
 
       <form ref={form} onSubmit={sendEmail} className="contact-form" aria-busy={sending}>
-        {/* Honeypot anti-bot (non compilare) */}
+
+        {/* Honeypot anti-bot (NON compilare) */}
         <input type="text" name="company" tabIndex="-1" autoComplete="off" style={{ display: "none" }} />
 
-        <input type="text" name="user_name" placeholder="Nome" required />
-        <input type="email" name="user_email" placeholder="Email" required />
-        <textarea name="message" placeholder="Il tuo messaggio" required />
+        {/* Campi utente */}
+        <input
+          type="text"
+          name="user_name"
+          placeholder="Nome"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          required
+        />
+
+        <input
+          type="email"
+          name="user_email"
+          placeholder="Email"
+          value={userEmail}
+          onChange={(e) => setUserEmail(e.target.value)}
+          inputMode="email"
+          autoComplete="email"
+          required
+        />
+
+        <textarea
+          name="message"
+          placeholder="Il tuo messaggio"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        />
+
+        {/* Alias compatibili con molti template EmailJS */}
+        <input type="hidden" name="from_name" value={userName} />
+        <input type="hidden" name="reply_to" value={userEmail} />
+        <input type="hidden" name="site_url" value={typeof window !== "undefined" ? window.location.href : ""} />
 
         <label className="privacy-consent">
           <input
@@ -74,7 +129,9 @@ const ContactForm = () => {
           />
           <span>
             Ho letto e accetto la{" "}
-            <a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a>.
+            <a href="/privacy-policy" target="_blank" rel="noreferrer">
+              Privacy Policy
+            </a>.
           </span>
         </label>
 
