@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
-
-// ✅ immagini dal public
-const sprayImage = '/img/spray1.jpg';
-const sprayUsoImage = '/img/img_5505.jpg';
+import sprayImage from '../assets/spray1.jpg';
+import sprayUsoImage from '/img_5505.jpg';
 
 function Spray() {
   return (
@@ -55,9 +54,9 @@ function Spray() {
         </div>
       </div>
 
-      <a href="/Home" className="cta-button" style={{ display: 'inline-block', marginTop: '2rem' }}>
+      <Link to="/Home" className="cta-button" style={{ display: 'inline-block', marginTop: '2rem' }}>
         ← Torna alla Home
-      </a>
+      </Link>
     </main>
   );
 }

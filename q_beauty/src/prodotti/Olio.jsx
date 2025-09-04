@@ -1,9 +1,8 @@
 import React from "react";
-import "../App.css";
-
-// ✅ immagini dal public
-const burroImage = "/img/burro_emoliente.jpg";
-const prodottoImage = "/img/img_5514.jpg";
+import { Link } from "react-router-dom";
+import "../App.css"; 
+import burroImage from "../assets/burro_emoliente.jpg";
+import prodottoImage from "../assets/img_5514.jpg";
 
 function ProdottoOlio() {
   return (
@@ -13,11 +12,7 @@ function ProdottoOlio() {
       <div className="product-card">
         <div className="product-image">
           <img src={burroImage} alt="Burro Emolliente" />
-          <img
-            src={prodottoImage}
-            alt="Burro Emolliente Q.BEAUTY"
-            style={{ marginTop: "1rem", borderRadius: "10px", maxWidth: "100%" }}
-          />
+          <img src={prodottoImage} alt="Burro Emolliente Q.BEAUTY" style={{ marginTop: '1rem', borderRadius: '10px', maxWidth: '100%' }} />
         </div>
 
         <div className="product-details">
@@ -48,7 +43,7 @@ function ProdottoOlio() {
             <li>  Vegan 🌿 </li>
             <li> 76% ingredienti di origine naturale 🌱</li>
           </ul>
-          <div style={{ marginTop: "2rem", fontSize: "1.3rem", lineHeight: "1.6" }}>
+          <div style={{ marginTop: '2rem', fontSize: '1.3rem', lineHeight: '1.6' }}>
             <p><strong>💰 Prezzo:</strong> € 24,90</p>
             <p>🔹 <strong>-10%</strong> sul primo acquisto → <strong>€ 22,40</strong></p>
             <p>🔹 <strong>-15%</strong> FISSO per le P. IVA → <strong>€ 21 IVA incl.</strong></p>
@@ -56,9 +51,9 @@ function ProdottoOlio() {
         </div>
       </div>
 
-      <a href="/Home" className="cta-button" style={{ display: "inline-block", marginTop: "2rem" }}>
+      <Link to="/Home" className="cta-button" style={{ display: "inline-block", marginTop: "2rem" }}>
         ← Torna alla Home
-      </a>
+      </Link>
     </main>
   );
 }

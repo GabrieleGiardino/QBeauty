@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
-
-// ✅ immagini dal public
-const cremaImage = '/img/crema_piedi.jpg';
-const cremaUsoImage = '/img/img_5511.jpg';
+import cremaImage from '../assets/crema_piedi.jpg';
+import cremaUsoImage from '../assets/img_5511.jpg';
 
 function Siero() {
   return (
@@ -59,9 +58,9 @@ function Siero() {
         </div>
       </div>
 
-      <a href="/Home" className="cta-button" style={{ display: "inline-block", marginTop: "2rem" }}>
+      <Link to="/Home" className="cta-button" style={{ display: "inline-block", marginTop: "2rem" }}>
         ← Torna alla Home
-      </a>
+      </Link>
     </main>
   );
 }
