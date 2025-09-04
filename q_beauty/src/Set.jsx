@@ -2,7 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css'; // Stili globali
-import beautySetImage from './assets/beauty_set.png'; // Import corretto immagine
+
+// ✅ immagine servita da /public/img
+const beautySetImage = '/img/beauty_set.png';
 
 function SetPage() {
   return (

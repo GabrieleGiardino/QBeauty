@@ -1,7 +1,9 @@
 import React from 'react';
 import '../App.css';
-import sprayImage from '../assets/spray1.jpg';
-import sprayUsoImage from '/img_5505.jpg';
+
+// ✅ immagini dal public
+const sprayImage = '/img/spray1.jpg';
+const sprayUsoImage = '/img/img_5505.jpg';
 
 function Spray() {
   return (

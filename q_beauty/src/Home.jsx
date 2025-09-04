@@ -5,13 +5,13 @@ import { FaInstagram } from 'react-icons/fa';
 import './App.css';
 import ContactForm from './components/ContactForm';
 
-// Import immagini da src/assets
-import founderImage from './assets/founder3.jpg';
-import sprayImage from './assets/spray1.jpg';
-import burroImage from './assets/burro_emoliente.jpg';
-import cremaImage from './assets/crema_piedi.jpg';
-import setImage from './assets/beauty_set.png';
-// ❌ rimosso: import qbeautyImage from './assets/qbeauty.jpg';
+// ✅ immagini servite da /public/img (niente import)
+const founderImage = '/img/founder3.jpg';
+const sprayImage   = '/img/spray1.jpg';
+const burroImage   = '/img/burro_emoliente.jpg';
+const cremaImage   = '/img/crema_piedi.jpg';
+const setImage     = '/img/beauty_set.png';
+const qbeautyBg    = '/img/qbeauty.jpg';
 
 function HomePage() {
   const [loaded, setLoaded] = useState(false);
@@ -44,8 +44,8 @@ function HomePage() {
         {modalOpen && (
           <div className="modal-overlay" onClick={() => setModalOpen(false)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              {/* ✅ usa l'immagine dal public */}
-              <img src="/qbeauty.jpg" alt="QBeauty sfondo" className="modal-background" />
+              {/* ✅ usa l'immagine dal public/img */}
+              <img src={qbeautyBg} alt="QBeauty sfondo" className="modal-background" />
               <div className="modal-text">
                 <h3>Chi sono</h3>
                 <p>

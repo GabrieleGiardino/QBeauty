@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import './Set';
 
-// import immagine da src/assets
-import lastImage from './assets/last.jpg';
+// immagine servita da /public/img
+const lastImage = "/img/last.jpg";
 
 function App() {
   return (
@@ -23,8 +23,7 @@ function App() {
                 Scopri i nostri prodotti →
               </Link>
             </div>
-            
-            </div>
+          </div>
         </header>
       </main>
     </div>

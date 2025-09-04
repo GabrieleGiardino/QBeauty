@@ -1,7 +1,9 @@
 import React from 'react';
 import '../App.css';
-import cremaImage from '../assets/crema_piedi.jpg';
-import cremaUsoImage from '../assets/img_5511.jpg';
+
+// ✅ immagini dal public
+const cremaImage = '/img/crema_piedi.jpg';
+const cremaUsoImage = '/img/img_5511.jpg';
 
 function Siero() {
   return (
