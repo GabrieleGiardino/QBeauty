@@ -1,13 +1,13 @@
-// src/App.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './App.css';
-import './Set';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./App.css";
+import BlackFridayModal from "./BlackFridayModal";
 
-// immagine servita da /public/img
 const lastImage = "/img/last.jpg";
 
 function App() {
+  const [showBFModal, setShowBFModal] = useState(true);
+
   return (
     <div className="home">
       <main className="App">
@@ -18,6 +18,7 @@ function App() {
               alt="Q.BEAUTY"
               className="hero-img"
             />
+
             <div className="cta-overlay">
               <Link to="/home" className="cta-button">
                 Scopri i nostri prodotti →
@@ -26,6 +27,12 @@ function App() {
           </div>
         </header>
       </main>
+
+      {/* POPUP BLACK FRIDAY */}
+      <BlackFridayModal
+        open={showBFModal}
+        onClose={() => setShowBFModal(false)}
+      />
     </div>
   );
 }

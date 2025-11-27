@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaInstagram } from 'react-icons/fa';
 import './App.css';
 import ContactForm from './components/ContactForm';
+// import BecomeResellerSection from './components/BecomeResellerSection';
 
 // ✅ immagini servite da /public/img (niente import)
 const founderImage = '/img/founder3.jpg';
@@ -109,13 +110,19 @@ function HomePage() {
         </section>
 
         {/* Form di contatto */}
-        <section className={`contact-section ${loaded ? 'visible' : ''}`}>
+        <section
+          id="contatti"
+          className={`contact-section ${loaded ? 'visible' : ''}`}
+        >
           <div className="form-card">
             <ContactForm />
           </div>
         </section>
 
-        {/* Footer aggiunto */}
+        {/* Sezione rivenditori con animazione */}
+        {/* <BecomeResellerSection loaded={loaded} /> */}
+
+        {/* Footer */}
         <footer className="site-footer">
           <p>
             © {new Date().getFullYear()} Tutti i diritti riservati – Realizzato da{' '}
