@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+// src/App.jsx
+import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import BlackFridayModal from "./BlackFridayModal";
 
 const lastImage = "/img/last.jpg";
 
 function App() {
-  const [showBFModal, setShowBFModal] = useState(true);
-
   return (
     <div className="home">
       <main className="App">
@@ -28,11 +26,9 @@ function App() {
         </header>
       </main>
 
-      {/* POPUP BLACK FRIDAY */}
-      <BlackFridayModal
-        open={showBFModal}
-        onClose={() => setShowBFModal(false)}
-      />
+      {/* QUI PRIMA C'ERA IL POPUP BLACK FRIDAY
+          <BlackFridayModal ... />
+      */}
     </div>
   );
 }
