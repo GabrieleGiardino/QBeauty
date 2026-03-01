@@ -39,10 +39,6 @@ function SetPage() {
               <del style={{ color: '#ccc', marginRight: '8px' }}>€ 67,70</del>
               <span style={{ fontWeight: 'bold' }}>€ 54,00</span>
             </p>
-            <p> 
-              <strong> 💰 Prezzo dedicato al Black Friday:</strong>{' '}
-              <span style={{ fontWeight: 'bold' }}>€ 54,00</span>
-            </p>
           </div>
 
           <Link to="/home" className="cta-button" style={{ marginTop: '1.5rem', display: 'inline-block' }}>
