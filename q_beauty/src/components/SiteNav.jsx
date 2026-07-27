@@ -18,6 +18,9 @@ function SiteNav({ productMode = false }) {
         <div className="site-nav-links">
           {productMode ? (
             <>
+              <a href="/#recensioni" className="site-nav-link">
+                Recensioni
+              </a>
               <a href="/#prodotti" className="site-nav-link">
                 Prodotti
               </a>
@@ -35,6 +38,9 @@ function SiteNav({ productMode = false }) {
             <>
               <a href="/#brand" className="site-nav-link site-nav-link-brand">
                 Brand
+              </a>
+              <a href="/#recensioni" className="site-nav-link">
+                Recensioni
               </a>
               <a href="/#prodotti" className="site-nav-link">
                 Prodotti

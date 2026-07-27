@@ -38,6 +38,7 @@ body {
 }
 
 #brand,
+#recensioni,
 #prodotti,
 #contatti,
 #faq {
@@ -123,7 +124,7 @@ img {
 .site-nav-brand-mark {
   display: block;
   width: auto;
-  height: 64px;
+  height: 56px;
   object-fit: contain;
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.22));
 }
@@ -786,6 +787,121 @@ section {
   align-items: start;
 }
 
+.review-proof-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.4rem;
+  margin-top: 0.4rem;
+}
+
+.review-proof-intro,
+.review-card,
+.review-stat-card {
+  position: relative;
+  border: 1px solid rgba(255, 235, 192, 0.08);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(14, 14, 14, 0.78), rgba(14, 14, 14, 0.36));
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.review-proof-intro {
+  padding: 1.6rem;
+  text-align: left;
+}
+
+.review-stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+
+.review-stat-card {
+  padding: 1rem 1.05rem;
+}
+
+.review-stat-card strong {
+  display: block;
+  color: #fff7de;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 0.95;
+}
+
+.review-stat-card span,
+.review-source-note,
+.review-date {
+  font-family: "Inter", sans-serif !important;
+}
+
+.review-stat-card span {
+  display: block;
+  margin-top: 0.45rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.review-source-note {
+  margin: 1rem 0 0;
+  color: rgba(255, 228, 149, 0.82);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.review-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.review-card {
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.review-card-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.review-card h3 {
+  margin: 0;
+  color: #fff4d4;
+  font-size: 1.35rem;
+}
+
+.review-date {
+  display: inline-flex;
+  margin-top: 0.35rem;
+  color: rgba(255, 228, 149, 0.76);
+  font-size: 0.84rem;
+  line-height: 1.3;
+}
+
+.review-stars {
+  color: var(--gold-soft);
+  letter-spacing: 0.12rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.review-card p {
+  margin: 0.95rem 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Inter", sans-serif !important;
+  line-height: 1.66;
+}
+
 .insta-btn {
   display: inline-flex;
   align-items: center;
@@ -1223,14 +1339,16 @@ section {
   .landing-hero-grid,
   .brand-story-grid,
   .set-stage-grid,
-  .contact-social-shell {
+  .contact-social-shell,
+  .review-proof-grid {
     display: grid;
     grid-template-columns: 1fr;
   }
 
   .signal-grid,
   .ritual-grid,
-  .product-showcase {
+  .product-showcase,
+  .review-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1727,9 +1845,11 @@ section {
   .brand-story-grid,
   .set-stage-grid,
   .contact-social-shell,
+  .review-proof-grid,
   .signal-grid,
   .ritual-grid,
-  .product-showcase {
+  .product-showcase,
+  .review-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1755,10 +1875,30 @@ section {
   .signal-card p,
   .ritual-card p,
   .set-step-row p,
+  .review-card p,
   .social-proof-card p,
   .contact-card p {
     font-size: .95rem;
     line-height: 1.58;
+  }
+
+  .review-proof-intro,
+  .review-card {
+    padding: 1.15rem;
+  }
+
+  .review-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+
+  .review-card-head {
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .review-stars {
+    letter-spacing: 0.08rem;
   }
 
   .set-step-row {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa";
 import "./App.css";
 import ContactForm from "./components/ContactForm";
+import ScrollSequenceShowcase from "./components/ScrollSequenceShowcase";
 import SiteNav from "./components/SiteNav";
 import { QB_SHOP_URLS } from "./shopLinks";
 
@@ -83,6 +84,40 @@ const faqSchema = {
     },
   })),
 };
+
+const reviewStats = {
+  total: 10,
+  averageRating: "5.0",
+  sourceLabel: "Recensioni pubblicate su qbeautyshop.it",
+};
+
+const featuredReviews = [
+  {
+    name: "Jessica",
+    text: "Sono stata da Elena per il corso aestetic pedicure e in quell'occasione ho avuto modo di provare i prodotti della sua linea e me ne sono innamorata. I profumi sono favolosi e le miei clienti li adorano, fanno la differenza in una pedicure di alto livello.",
+    date: "13 lug 2026",
+  },
+  {
+    name: "Miriam",
+    text: "Ho acquistato il Set Experience di Q-Beauty per i trattamenti in cabina e ne sono assolutamente entusiasta. E un vero e proprio trattamento professionale completo. Lo Spray igienizzante e freschissimo, la Crema cheratolitica ha fatto miracoli sui punti piu critici e il Burro emolliente lascia i piedi morbidissimi a lungo.",
+    date: "21 mag 2026",
+  },
+  {
+    name: "Martina",
+    text: "I prodotti sono sensazionali, ormai le mie clienti li adorano. La crema e un'ottima alleata per la cura domiciliare di ragadi e screpolature; il burro permette una levigatura perfetta. E vogliamo parlare dello spray? Neutralizza ogni odore idratando la pelle nell'immediato.",
+    date: "23 mar 2026",
+  },
+  {
+    name: "Alessia",
+    text: "Kerato5, il mai piu senza. Anche usato come semplice sciogli cuticole lascia senza parole. E il prodotto da avere assolutamente quando si lavora con pedicure con callosita e inspessimenti difficili da trattare.",
+    date: "7 lug 2026",
+  },
+  {
+    name: "Camilla",
+    text: "Me ne sono innamorata gia all'arrivo quando ho aperto il pacco, per l'inebriante profumo, poi ho subito constatato le performance. La crema cheratolitica e il mio prodotto preferito e piace un sacco anche alle clienti che hanno notato le differenze.",
+    date: "13 mag 2026",
+  },
+];
 
 const featuredProducts = [
   {
@@ -332,6 +367,8 @@ function HomePage() {
           </div>
         </section>
 
+        <ScrollSequenceShowcase />
+
         <section className="section-shell gallery" id="prodotti">
           <div className="section-heading reveal-card" data-reveal>
             <p className="section-eyebrow">COLLEZIONE</p>
@@ -407,6 +444,61 @@ function HomePage() {
                   Vai allo shop
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell review-proof-shell" id="recensioni">
+          <div className="review-proof-grid">
+            <article className="review-proof-intro reveal-card" data-reveal>
+              <p className="section-eyebrow">RECENSIONI</p>
+              <h2>Le professioniste che lo hanno provato lo raccontano cosi.</h2>
+              <p className="section-lead">
+                Una selezione di recensioni pubblicate sullo shop ufficiale
+                Q.BEAUTY, utili per mostrare risultati percepiti, fidelizzazione
+                cliente e valore reale in cabina.
+              </p>
+
+              <div className="review-stats-row">
+                <div className="review-stat-card">
+                  <strong>{reviewStats.averageRating}/5</strong>
+                  <span>valutazione media</span>
+                </div>
+                <div className="review-stat-card">
+                  <strong>{reviewStats.total}</strong>
+                  <span>recensioni pubblicate</span>
+                </div>
+              </div>
+
+              <p className="review-source-note">{reviewStats.sourceLabel}</p>
+
+              <div className="hero-actions">
+                <a href={QB_SHOP_URLS.shop} className="cta-button">
+                  Vai allo shop
+                </a>
+              </div>
+            </article>
+
+            <div className="review-grid">
+              {featuredReviews.map((review, index) => (
+                <article
+                  key={`${review.name}-${review.date}`}
+                  className="review-card reveal-card"
+                  data-reveal
+                  style={{ "--reveal-delay": `${70 + index * 70}ms` }}
+                >
+                  <div className="review-card-head">
+                    <div>
+                      <h3>{review.name}</h3>
+                      <span className="review-date">{review.date}</span>
+                    </div>
+                    <span className="review-stars" aria-label="5 su 5">
+                      ★★★★★
+                    </span>
+                  </div>
+                  <p>{review.text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
