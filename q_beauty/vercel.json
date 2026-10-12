@@ -2,6 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/",
+      "destination": "https://www.qbeautyshop.it/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://www.qbeautyshop.it/",
       "permanent": true
