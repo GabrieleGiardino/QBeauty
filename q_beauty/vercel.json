@@ -3,49 +3,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": { "suf": ".vercel.app" } }],
-      "destination": "https://www.qbeauty.it/",
-      "permanent": true
-    },
-    {
-      "source": "/home",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/Home",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "qbeauty.it" }],
-      "destination": "https://www.qbeauty.it/:path*",
+      "destination": "https://www.qbeautyshop.it/",
       "permanent": true
     }
-  ],
-  "headers": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": { "suf": ".vercel.app" } }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
-    },
-    {
-      "source": "/home",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
-    },
-    {
-      "source": "/sitemap.xml",
-      "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
-    }
-  ],
-  "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
