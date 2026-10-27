@@ -2,12 +2,37 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/prodotti/Kerato5",
+      "destination": "https://www.qbeautyshop.it/shop/product/6a4275267224fa75558c4fa0",
+      "permanent": true
+    },
+    {
+      "source": "/prodotti/Spray",
+      "destination": "https://www.qbeautyshop.it/shop/product/69a0344b8a3d6d664cc8ef3c",
+      "permanent": true
+    },
+    {
+      "source": "/prodotti/Olio",
+      "destination": "https://www.qbeautyshop.it/shop/product/69a1785bfb05d83d9ee75570",
+      "permanent": true
+    },
+    {
+      "source": "/prodotti/Siero",
+      "destination": "https://www.qbeautyshop.it/shop/product/69a17cdcfb05d83d9ee755a1",
+      "permanent": true
+    },
+    {
+      "source": "/set",
+      "destination": "https://www.qbeautyshop.it/shop/product/69a17e0bfb05d83d9ee755b9",
+      "permanent": true
+    },
+    {
       "source": "/",
       "destination": "https://www.qbeautyshop.it/",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/:path((?!robots\\.txt|sitemap\\.xml).*)",
       "destination": "https://www.qbeautyshop.it/",
       "permanent": true
     }
